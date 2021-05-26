@@ -2,7 +2,7 @@
 
 ## Projeto Web
 
-Projeto web fois construído em React JS com objetivo de consumir uma API que realiza o cálculo de juros compostos com base em um valor inicial e o número de meses escolhidos.
+Projeto web (BR.Site) foi construído em React JS com objetivo de consumir uma API que realiza o cálculo de juros compostos com base em um valor inicial e o número de meses escolhido.
 
 ### Instalando
 
@@ -10,7 +10,7 @@ Projeto web fois construído em React JS com objetivo de consumir uma API que re
 
 ### Configurando
 
-#### É necessário a criação do arquivo .env e a configuração da variável `REACT_APP_BASEURL` indicando a url base onde ficará a API de Cálculo.
+É necessário a criação do arquivo .env e a configuração da variável `REACT_APP_BASEURL` indicando a url base onde ficará a API de Cálculo.
 
 #### Exemplo:
 
@@ -22,7 +22,7 @@ Projeto web fois construído em React JS com objetivo de consumir uma API que re
 
 ## APIs
 
-Existem duas APIs: API Taxas e API Calc
+Existem duas APIs: API Taxas (BR.Taxas) e API Calc (BR.Calc)
 
 Ambas utilizam as seguintes tecnologias/frameworks:
 
@@ -33,7 +33,7 @@ Ambas utilizam as seguintes tecnologias/frameworks:
 
 ### Inicialização
 
-As Apis, ao inicializarem, serão direcionadas para página do Swagger, contendo informações necessárias para utilização das mesmas.
+As APIs, ao inicializarem, serão direcionadas para página do Swagger, contendo informações necessárias para utilização das mesmas.
 
 > De preferência as APIs devem ser executadas diretamente por seus projetos de inicialização, e não pelo IIS Express. Isso facilitará o funcionamento local.
 
