@@ -1,44 +1,67 @@
-Serviço de cálculo de juros ao mês
-==========
+# Projeto de estudos - Juros compostos
 
-Neste repositório existem duas APIs: API Taxas e API Calc
+## Projeto Web
+
+Projeto web fois construído em React JS com objetivo de consumir uma API que realiza o cálculo de juros compostos com base em um valor inicial e o número de meses escolhidos.
+
+### Instalando
+
+> `npm install`
+
+### Configurando
+
+#### É necessário a criação do arquivo .env e a configuração da variável `REACT_APP_BASEURL` indicando a url base onde ficará a API de Cálculo.
+
+#### Exemplo:
+
+> `REACT_APP_BASEURL=https://localhost:5003/`
+
+### Rodando a aplicação localmente
+
+> `npm start`
+
+## APIs
+
+Existem duas APIs: API Taxas e API Calc
 
 Ambas utilizam as seguintes tecnologias/frameworks:
 
-* .NET Core 3.1
-* Swagger
-* NUnit
-* Moq
+- .NET Core 3.1
+- Swagger
+- NUnit
+- Moq
 
+### Inicialização
 
-Inicialização 
------------
-Ambas as APIs, ao inicializar, serão direcionadas para página do Swagger, contendo informações necessárias para utilização das mesmas.
+As Apis, ao inicializarem, serão direcionadas para página do Swagger, contendo informações necessárias para utilização das mesmas.
 
+> De preferência as APIs devem ser executadas diretamente por seus projetos de inicialização, e não pelo IIS Express. Isso facilitará o funcionamento local.
 
-Estrutura dos projetos
-----------------------
-Criei um projeto para cada contexto que julguei necessário. Basicamente, a estrutura ficou dividida da seguinte forma:
+### Estrutura dos projetos
+
+Foram criados dois projetos distintos com a seguintes estruturas:
 
 API Taxas
-* Api
-* Servicos
 
-* TestesUnitarios
-* TestesIntegrados
+- Api
+- Servicos
+
+- TestesUnitarios
+- TestesIntegrados
 
 API Calc
-* Api
-* Servicos
-* ServicosIntegrados
 
-* TestesUnitarios
+- Api
+- Servicos
+- ServicosIntegrados
 
-Busquei separar as responsabilidades seguindo um dos conceitos de SOLID.
+- TestesUnitarios
 
-Testes
-------
-Para a API de Taxas foi realizado testes unitários e testes integrados.
-Já para a API de Calc foi realizado somente testes unitários.
+Foram separadas as responsabilidades seguindo conceitos de SOLID.
 
-Meu propósito na elaboração dos testes foi demostrar a intensão e conhecimento na implementação dos mesmos. Por isso, existem cenários não cobertos.
+### Testes
+
+Para a API de Taxas foram realizados testes unitários e testes integrados.
+Já para a API de Calc, somente testes unitários.
+
+O propósito na elaboração dos testes foi demostrar a intensão e conhecimento na implementação dos mesmos. Por isso, existem cenários não cobertos.
