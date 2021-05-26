@@ -7,10 +7,10 @@ namespace BR.Calc.Servicos
 {
     public static class ExtensaoColecaoServico
     {
-        public static IServiceCollection AddInjecaoDependencia(this IServiceCollection services)
+        public static IServiceCollection AddInjecaoDependencia(this IServiceCollection services, string baseUrlApi)
         {
-            services.AddTransient<ICalculoJurosServico, CalculoJurosServico>();
-            services.AddTransient<ITaxaJurosServico, TaxaJurosServico>();
+            services.AddScoped<ICalculoJurosServico, CalculoJurosServico>();
+            services.AddScoped<ITaxaJurosServico, TaxaJurosServico>(o => new TaxaJurosServico(baseUrlApi));
 
             return services;
         }

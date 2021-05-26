@@ -37,8 +37,10 @@ namespace BR.Calc.TestesUnitarios.ServicosIntegrados
                     ItExpr.IsAny<CancellationToken>())
                .ReturnsAsync(response);
 
+            var baseFakeUrl = "http://localhost";
             var httpClient = new HttpClient(_mockHttpMessageHandler.Object);
-            _taxaJurosServico = new TaxaJurosServico(httpClient);
+
+            _taxaJurosServico = new TaxaJurosServico(baseFakeUrl, httpClient);
 
             var resultado = await _taxaJurosServico.RetorneTaxaJuros();
 

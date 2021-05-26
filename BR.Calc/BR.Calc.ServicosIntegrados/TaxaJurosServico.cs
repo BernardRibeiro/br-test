@@ -8,18 +8,19 @@ namespace BR.Calc.ServicosIntegrados
 {
     public class TaxaJurosServico: ITaxaJurosServico
     {
-        private const string ApiUrl = "https://localhost:44335/taxaJuros";
+        private string _baseUrlApi = string.Empty;
 
         private static HttpClient _client;
 
-        public TaxaJurosServico(HttpClient httpClient = null)
+        public TaxaJurosServico(string baseUrlApi, HttpClient httpClient = null)
         {
+            _baseUrlApi = baseUrlApi;
             _client = httpClient ?? new HttpClient();
         }
 
         public async Task<double> RetorneTaxaJuros()
         {
-            HttpResponseMessage response = await _client.GetAsync(ApiUrl);
+            HttpResponseMessage response = await _client.GetAsync($"{_baseUrlApi}/TaxaJuros");
 
             if (response.IsSuccessStatusCode)
             {

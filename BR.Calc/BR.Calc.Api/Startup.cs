@@ -27,9 +27,11 @@ namespace BR.Calc.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            var baseUrlApi = Configuration.GetSection("BaseUrlApi").Value;
 
-            ExtensaoColecaoServico.AddInjecaoDependencia(services);
+            ExtensaoColecaoServico.AddInjecaoDependencia(services, baseUrlApi);
+
+            services.AddControllers();
 
             services.AddSwaggerGen(options =>
             {
@@ -45,6 +47,8 @@ namespace BR.Calc.Api
                         }
                     });
             });
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +62,11 @@ namespace BR.Calc.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(builder => builder
+               .AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader());
 
             app.UseAuthorization();
 
