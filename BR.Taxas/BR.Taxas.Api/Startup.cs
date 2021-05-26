@@ -23,7 +23,7 @@ namespace BR.Taxas.Api
         {
             services.AddControllers();
 
-            services.AddTransient<ITaxaJurosServico, TaxaJurosServico>();
+            services.AddScoped<ITaxaJurosServico, TaxaJurosServico>();
 
             services.AddSwaggerGen(options =>
             {
@@ -39,6 +39,8 @@ namespace BR.Taxas.Api
                         }
                     });
             });
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +56,11 @@ namespace BR.Taxas.Api
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(builder => builder
+              .AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader());
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
